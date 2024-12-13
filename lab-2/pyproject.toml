@@ -1,0 +1,58 @@
+[tool.poetry]
+name = "lab-2"
+version = "0.1.0"
+description = ""
+authors = ["Kyrylo Korablov <kyrylo.korablov@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+cryptography = "^44.0.0"
+typer = "^0.15.1"
+rich = "^13.9.4"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.8.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+src = ["lab_2", "tests"]
+line-length = 89
+respect-gitignore = true
+output-format = "grouped"
+show-fixes = true
+indent-width = 4
+
+[tool.ruff.format]
+indent-style = "space"
+skip-magic-trailing-comma = true
+
+[tool.ruff.lint]
+select = [
+    "F",
+    "E",
+    "W",
+    "I",
+    "N",
+    "A",
+    "COM",
+    "DTZ",
+    "T20",
+    "PTH"
+]
+ignore = [
+    "COM812"
+]
+
+[tool.ruff.lint.isort]
+split-on-trailing-comma = false
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
