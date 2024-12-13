@@ -1,0 +1,7 @@
+services:
+  app:
+    build: .
+    entrypoint: python -m lab_2
+    restart: no
+    volumes:
+      - ./lab_2:/usr/src/app/lab_2:cached
